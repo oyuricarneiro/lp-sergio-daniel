@@ -1,0 +1,21 @@
+# Processo / não-produção
+briefing.md
+copy.md
+layout.md
+persona.md
+pesquisa-mercado.md
+tom-de-voz.md
+design-plan.md
+referencias/
+_backup_v*/
+
+# Sistema
+.DS_Store
+*.log
+
+# Fotos brutas / não usadas na LP (manter só assets de produção em /images)
+fotos-brutas/
+_fotos/
+
+# Local Netlify folder
+.netlify

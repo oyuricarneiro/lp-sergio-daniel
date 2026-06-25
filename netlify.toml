@@ -1,0 +1,23 @@
+[build]
+  publish = "."
+
+[dev]
+  framework = "#static"
+  publish = "."
+
+# CSS/JS sem hash no nome: nunca immutable (evita versão presa no browser)
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Imagens (com conteúdo estável): cache longo
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#1E4D43"/>
+      <stop offset="100%" stop-color="#0C2422"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8D29A"/>
+      <stop offset="55%" stop-color="#CBA252"/>
+      <stop offset="100%" stop-color="#9A7B2E"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="url(#g)"/>
+  <circle cx="32" cy="32" r="29" fill="none" stroke="url(#gold)" stroke-width="2"/>
+  <!-- linhas radiantes (vento/asas) -->
+  <path d="M32 50 C20 46 14 38 12 28" fill="none" stroke="url(#gold)" stroke-width="1.4" opacity="0.7"/>
+  <path d="M32 50 C44 46 50 38 52 28" fill="none" stroke="url(#gold)" stroke-width="1.4" opacity="0.7"/>
+  <path d="M32 50 C24 44 21 36 21 27" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.5"/>
+  <path d="M32 50 C40 44 43 36 43 27" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.5"/>
+  <!-- figura -->
+  <circle cx="32" cy="20" r="5" fill="url(#gold)"/>
+  <path d="M32 25 C27 25 25 29 25 35 L25 47 C25 49 27 50 28 47 L30 37 L34 37 L36 47 C37 50 39 49 39 47 L39 35 C39 29 37 25 32 25 Z" fill="url(#gold)"/>
+</svg>

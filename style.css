@@ -97,6 +97,11 @@ p{margin:0}
   padding:12px 0;border-bottom-color:color-mix(in srgb,var(--gold-500) 22%,transparent);
 }
 .site-header__row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.site-header__crm{display:none;text-align:center;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--gold-400);margin-top:5px}
+@media (max-width:900px){
+  .site-header{flex-direction:column;align-items:stretch}
+  .site-header__crm{display:block}
+}
 .brand{display:flex;align-items:center;gap:12px;color:var(--cream)}
 .brand__mark{width:44px;height:44px;flex:none;border-radius:50%;object-fit:cover;box-shadow:0 4px 14px rgba(0,0,0,.4),0 0 0 1px color-mix(in srgb,var(--gold-400) 30%,transparent)}
 .brand__name{display:flex;flex-direction:column;line-height:1}
@@ -499,7 +504,7 @@ p{margin:0}
   .hero__sub{font-size:1rem}
   .hero__cta .btn{width:100%}
   .portrait__badge{left:8px;bottom:12px;padding:.7rem .9rem}
-  .brand__name span{display:none}
+  .brand__name span{display:block}
   .problema__close{flex-direction:column;align-items:flex-start}
 }
 

@@ -403,6 +403,49 @@ p{margin:0}
   padding-top:22px;border-top:1px solid color-mix(in srgb,var(--cream) 12%,transparent);
   font-size:.82rem;color:color-mix(in srgb,var(--cream) 55%,transparent)}
 
+/* SEÇÃO 4 v2 — Transformações (antes/depois, centralizado) */
+.results .transform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:940px;margin:0 auto}
+.transform-card{position:relative;display:block;width:100%;padding:0;border:0;cursor:zoom-in;background:var(--green-950);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-soft);aspect-ratio:16/9;-webkit-tap-highlight-color:transparent}
+.transform-card img{width:100%;height:100%;object-fit:contain;background:var(--green-950);display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.transform-card::after{content:"";position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--gold-400) 26%,transparent);pointer-events:none;transition:box-shadow .35s}
+.transform-card:hover img,.transform-card:focus-visible img{transform:scale(1.05)}
+.transform-card:hover::after,.transform-card:focus-visible::after{box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--gold-400) 60%,transparent)}
+.transform-card__tags{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;padding:10px;pointer-events:none}
+.transform-card__tags b{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:.38em .75em;border-radius:999px;color:var(--cream);background:color-mix(in srgb,var(--green-950) 66%,transparent);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.transform-card__tags b.is-after{color:var(--green-950);background:var(--gold-500)}
+.transform-card__zoom{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--green-950) 55%,transparent);color:var(--gold-300);opacity:0;transform:scale(.85);transition:.3s;pointer-events:none}
+.transform-card__zoom svg{width:18px;height:18px}
+.transform-card:hover .transform-card__zoom,.transform-card:focus-visible .transform-card__zoom{opacity:1;transform:scale(1)}
+.transform-note{text-align:center;margin:26px auto 0;max-width:48ch;font-size:.82rem;color:var(--paper-text);opacity:.85}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;gap:8px;padding:clamp(16px,4vw,48px);background:color-mix(in srgb,var(--green-950) 88%,#000);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;transition:opacity .3s}
+.lightbox[hidden]{display:none}
+.lightbox.open{opacity:1}
+.lightbox__stage{margin:0;max-width:min(1100px,92vw);display:flex;flex-direction:column;gap:14px;align-items:center}
+.lightbox__img{max-width:100%;max-height:78vh;border-radius:12px;box-shadow:0 30px 80px -30px #000;border:1px solid color-mix(in srgb,var(--gold-400) 30%,transparent)}
+.lightbox__cap{display:flex;align-items:center;gap:14px;color:var(--cream)}
+.lightbox__cap b{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:.34em .8em;border-radius:999px;background:color-mix(in srgb,var(--cream) 14%,transparent)}
+.lightbox__cap b.is-after{color:var(--green-950);background:var(--gold-500)}
+.lightbox__cap span{font-family:var(--font-display);font-size:.95rem;color:color-mix(in srgb,var(--cream) 82%,transparent)}
+.lightbox__close{position:absolute;top:16px;right:16px;width:46px;height:46px}
+.lightbox__close,.lightbox__nav{display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--cream) 22%,transparent);background:color-mix(in srgb,var(--green-950) 50%,transparent);color:var(--cream);border-radius:50%;cursor:pointer;transition:.25s}
+.lightbox__nav{width:48px;height:48px;flex:none}
+.lightbox__close:hover,.lightbox__nav:hover{background:var(--gold-500);color:var(--green-950);border-color:var(--gold-500)}
+.lightbox__close svg,.lightbox__nav svg{width:22px;height:22px}
+
+/* Hero — chip de credencial + parallax (pós-load) */
+.portrait__cred{position:absolute;top:-14px;right:16px;z-index:4;display:inline-flex;align-items:center;gap:.45em;font-size:.72rem;font-weight:700;letter-spacing:.05em;color:var(--green-950);background:linear-gradient(135deg,var(--gold-300),var(--gold-500));padding:.5em .9em;border-radius:999px;box-shadow:0 10px 26px -10px rgba(154,123,46,.75)}
+.portrait__cred svg{width:1.05em;height:1.05em}
+.hero__media{will-change:transform}
+
+/* Responsivo — transformações/lightbox/cred */
+@media (max-width:640px){
+  .results .transform-grid{grid-template-columns:1fr;max-width:480px}
+  .lightbox__nav{width:42px;height:42px}
+  .portrait__cred{right:8px;font-size:.66rem}
+}
+
 /* Responsivo — seções novas ------------------------------- */
 @media (max-width:900px){
   .bento{grid-template-columns:1fr 1fr;grid-auto-rows:auto}
